@@ -7,20 +7,33 @@ import Favourite from "../Screens/Favourite/Favourite";
 import Feather from '@expo/vector-icons/Feather';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { createStackNavigator } from '@react-navigation/stack';
+import Detail from "../Screens/Detail/Detail";
 
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function HomeStack(){
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Detail" component={Detail} />
+        </Stack.Navigator>
+    )
+}
 
 function MyRoutes () {
     return (
         <Tab.Navigator
          screenOptions={() => ({
+            //headerShown: false,
             tabBarActiveTintColor: 'tomato',
             tabBarInactiveTintColor: 'gray'
          })}
         >
             <Tab.Screen 
             name="Home" 
-            component={Home}
+            component={HomeStack}
             options={{
                 tabBarIcon: () => (
                     <Feather name="search" size={24} color="black" /> 
