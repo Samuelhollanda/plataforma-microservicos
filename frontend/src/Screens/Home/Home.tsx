@@ -1,4 +1,5 @@
 import ProductList from "@/src/components/ProductList/ProductList";
+import SearchBar from "@/src/components/SearchBar/SearchBar";
 import { useNavigation } from "expo-router";
 import { View, Text, Button, TextInput } from "react-native";
 
@@ -14,7 +15,7 @@ const Home = () => {
                 </Text>
             </View>
             <View>
-                <TextInput style={{borderWidth:1}}/>
+                <SearchBar />
             </View>
             <View>
                 <ProductList />

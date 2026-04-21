@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
+    search: {
+        borderWidth: 1,
+        margin: 10
     }
 })
+
+export default style;

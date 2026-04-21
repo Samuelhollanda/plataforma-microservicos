@@ -19,8 +19,10 @@ const ProductList = () => {
                     </View>
                     <TouchableOpacity
                         onPress={() => navigation.navigate('Detail')}
+                        style={style.card}
                     >
-                        <Text>{ item.title }</Text>
+                        <Text style={style.title}>{ item.title }</Text>
+                        <Text>Descrição:</Text>
                         <Text>{ item.description }</Text>
                     </TouchableOpacity>
                    </View>

@@ -14,6 +14,14 @@ const style = StyleSheet.create ({
         width: 150,
         height: 150,
         borderRadius: 5
+    },
+    card: {
+        backgroundColor: 'green',
+        margin: 4
+    },
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold'
     }
 })
 
