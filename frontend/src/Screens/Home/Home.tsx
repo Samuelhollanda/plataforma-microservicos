@@ -18,6 +18,11 @@ const Home = () => {
                 <SearchBar />
             </View>
             <View>
+                <Text>
+                    Ultimos Serviços
+                </Text>
+            </View>
+            <View>
                 <ProductList />
             </View>
         </View>

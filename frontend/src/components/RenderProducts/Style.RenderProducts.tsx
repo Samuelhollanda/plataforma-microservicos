@@ -3,12 +3,12 @@ import { StyleSheet } from "react-native";
 const style = StyleSheet.create ({
     container: {
         flex: 1,
-        backgroundColor: 'red',
+        //backgroundColor: 'red',
         borderWidth: 2,
         alignItems: 'center',
         margin: 10,
         padding: 10,
-        flexDirection: 'row'
+        //flexDirection: 'row'
     },
     image: {
         width: 150,
@@ -16,8 +16,9 @@ const style = StyleSheet.create ({
         borderRadius: 5
     },
     card: {
-        backgroundColor: 'green',
-        margin: 4
+        //backgroundColor: 'green',
+        margin: 4,
+        flex: 1
     },
     title: {
         fontSize: 20,

@@ -1,4 +1,3 @@
-import { useNavigation, NavigationContainer } from "@react-navigation/native";
 import Home from "../Screens/Home/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Chat from "../Screens/Chat/Chat";

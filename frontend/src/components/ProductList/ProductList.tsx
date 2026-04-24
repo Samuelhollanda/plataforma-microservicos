@@ -1,32 +1,16 @@
-import { FlatList, View, Image, Text, TouchableOpacity } from "react-native"
+import { FlatList, View } from "react-native"
 import listProduct from "@/data/data"
-import { useNavigation } from "@react-navigation/native";
-import style from "./Style.ProuctlList";
-
+import RenderProducts from "../RenderProducts/RenderProducts"
 
 const ProductList = () => {
 
-    const navigation = useNavigation()
 
     return (
         <View>
-            <FlatList 
+            <FlatList
                 data={listProduct}
-                renderItem={({ item }) => (
-                   <View style={style.container} > 
-                    <View>
-                        <Image source={ item.photo } style={style.image} />
-                    </View>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('Detail')}
-                        style={style.card}
-                    >
-                        <Text style={style.title}>{ item.title }</Text>
-                        <Text>Descrição:</Text>
-                        <Text>{ item.description }</Text>
-                    </TouchableOpacity>
-                   </View>
-                )}
+                renderItem={({ item }) => <RenderProducts item={item} />}
+                keyExtractor={(item) => String(item.id_product)}
             />
         </View>
     )
