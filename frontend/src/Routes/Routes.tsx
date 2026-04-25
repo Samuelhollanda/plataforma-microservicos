@@ -8,6 +8,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { createStackNavigator } from '@react-navigation/stack';
 import Detail from "../Screens/Detail/Detail";
+import LoginScreen from "../Screens/Login/Login";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -32,7 +33,7 @@ function MyRoutes () {
         >
             <Tab.Screen 
             name="Home" 
-            component={HomeStack}
+            component={LoginScreen}
             options={{
                 tabBarIcon: () => (
                     <Feather name="search" size={24} color="black" /> 
