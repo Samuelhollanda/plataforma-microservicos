@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089108489042",
+    "project_id": "micoservicos-c9fe0",
+    "storage_bucket": "micoservicos-c9fe0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089108489042:android:83ea997edc9bf2718cc08b",
+        "android_client_info": {
+          "package_name": "com.plataforma.microservicos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADqMbUEOfs_Zw83J--guQLwst2Z6M3ryU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
