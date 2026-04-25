@@ -11,16 +11,32 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-// Importações do Firebase Web SDK
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebaseConfig' // Ajuste o caminho se necessário
+// 1. Importamos os tipos do React Navigation
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export default function LoginScreen() {
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebaseConfig'; 
+
+// 2. Definimos as rotas que existem no seu App
+type RootStackParamList = {
+  Login: undefined;
+  Home: undefined;
+};
+
+// 3. Tipamos especificamente a navegação desta tela
+type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
+
+// 4. Dizemos que as Props do componente incluem a tipagem acima
+interface Props {
+  navigation: LoginScreenNavigationProp;
+}
+
+// 5. Aplicamos a interface Props no componente
+export default function LoginScreen({ navigation }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Função para fazer o Login
   const handleLogin = async () => {
     if (email === '' || password === '') {
       Alert.alert('Erro', 'Por favor, preencha todos os campos.');
@@ -30,22 +46,23 @@ export default function LoginScreen() {
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      Alert.alert('Sucesso', 'Login realizado com sucesso!');
-      // Redirecione o usuário para a Home aqui
+      navigation.replace('Home'); 
     } catch (error) {
-      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+      // 6. Afirmamos para o TS o formato do erro do Firebase
+      const err = error as { code: string; message: string };
+
+      if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
         Alert.alert('Erro', 'E-mail ou senha incorretos.');
-      } else if (error.code === 'auth/invalid-email') {
+      } else if (err.code === 'auth/invalid-email') {
         Alert.alert('Erro', 'Formato de e-mail inválido.');
       } else {
-        Alert.alert('Erro', error.message);
+        Alert.alert('Erro', err.message);
       }
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Função para criar uma nova conta
   const handleSignUp = async () => {
     if (email === '' || password === '') {
       Alert.alert('Erro', 'Preencha os campos para criar uma conta.');
@@ -55,14 +72,17 @@ export default function LoginScreen() {
     setIsLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      Alert.alert('Sucesso', 'Conta criada com sucesso!');
+      navigation.replace('Home');
     } catch (error) {
-      if (error.code === 'auth/email-already-in-use') {
+      // 6. Afirmamos para o TS o formato do erro do Firebase novamente
+      const err = error as { code: string; message: string };
+
+      if (err.code === 'auth/email-already-in-use') {
         Alert.alert('Erro', 'Este e-mail já está em uso.');
-      } else if (error.code === 'auth/weak-password') {
+      } else if (err.code === 'auth/weak-password') {
         Alert.alert('Erro', 'A senha deve ter pelo menos 6 caracteres.');
       } else {
-        Alert.alert('Erro', error.message);
+        Alert.alert('Erro', err.message);
       }
     } finally {
       setIsLoading(false);
