@@ -12,9 +12,8 @@ const Home = () => {
     return (
         <View>
             <View>
-                <Text>     
+                <Text style={style.title}>     
                     Bem Vindo a Plataforma de Serviços
-                 
                 </Text>
             </View>
             <View>
@@ -22,7 +21,7 @@ const Home = () => {
             </View>
             <View>
                 <Text>
-                    Ultimos Serviços
+                    Ultimos Serviços, bruno 
                 </Text>
             </View>
             <View>
