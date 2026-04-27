@@ -49,7 +49,11 @@ const style = StyleSheet.create({
     buyButtonText: {
         color: '#fff',
         fontWeight: 'bold',
+    },
+    detail: {
+        
     }
+
 
 
 
