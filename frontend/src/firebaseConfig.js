@@ -1,4 +1,3 @@
-// firebaseConfig.js
 import { initializeApp } from 'firebase/app';
 import { initializeAuth, getReactNativePersistence } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -13,10 +12,10 @@ const firebaseConfig = {
 };
 
 
-// Inicializa o Firebase
+
 const app = initializeApp(firebaseConfig);
 
-// Inicializa o Auth com persistência de dados (mantém o usuário logado)
+
 const auth = initializeAuth(app, {
   persistence: getReactNativePersistence(AsyncStorage)
 });
