@@ -1,15 +1,15 @@
-import React from 'react';
-import Home from "../Screens/Home/Home";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Chat from "../Screens/Chat/Chat";
-import Profile from "../Screens/Profile/Profile";
-import Favourite from "../Screens/Favourite/Favourite";
+import AntDesign from '@expo/vector-icons/AntDesign';
 import Feather from '@expo/vector-icons/Feather';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
+import React from 'react';
+import Chat from "../Screens/Chat/Chat";
 import Detail from "../Screens/Detail/Detail";
+import Favourite from "../Screens/Favourite/Favourite";
+import Home from "../Screens/Home/Home";
 import Login from "../Screens/Login/Login";
+import Profile from "../Screens/Profile/Profile";
 import Register from "../Screens/Register/Register";
 
 const Stack = createStackNavigator();
