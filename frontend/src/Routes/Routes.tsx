@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import Chat from "../Screens/Chat/Chat";
+import Chat from '../Screens/Chat/Chat';
 import Detail from "../Screens/Detail/Detail";
 import Favourite from "../Screens/Favourite/Favourite";
 import Home from "../Screens/Home/Home";
