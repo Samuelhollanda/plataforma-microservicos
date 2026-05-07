@@ -1,13 +1,15 @@
+import { router } from "expo-router";
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
-    Text,
-    View,
     FlatList,
     Image,
+    StatusBar,
+    Text,
     TextInput,
-    StatusBar
+    TouchableOpacity,
+    View
 } from 'react-native';
-import { useNavigation } from "expo-router";
 
 import estilos from './Style.Chat';
 
@@ -29,10 +31,12 @@ export default function Chat() {
                 : item.foto;
 
         return (
-            <View style={estilos.itemLista}>
+            <TouchableOpacity 
+            style={estilos.itemLista}   
+            onPress={() => navigation.navigate('ChatDetail' as never)}>
                 <Image source={imagemCerta} style={estilos.fotoContato} />
                 <Text style={estilos.nomeContato}>{item.nome}</Text>
-            </View>
+            </TouchableOpacity>
         );
     };
 
@@ -43,7 +47,7 @@ export default function Chat() {
 
             <View style={estilos.barraSuperior}>
                 <View style={estilos.topoLinha}>
-                    <Text style={estilos.logo}>OLX</Text>
+                    <Text style={estilos.logo}>PMM</Text>
                     <Text style={estilos.localizacao}>Teresina, Piauí</Text>
                 </View>
 
