@@ -11,6 +11,7 @@ import Home from "../Screens/Home/Home";
 import Login from "../Screens/Login/Login";
 import Profile from "../Screens/Profile/Profile";
 import Register from "../Screens/Register/Register";
+import ChatDetail from '../Screens/ChatDetail/ChatDetail';
 
 const Stack = createStackNavigator();
 const RootStack = createStackNavigator();
@@ -21,6 +22,15 @@ function HomeStackComponent() {
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Detail" component={Detail} />
+        </Stack.Navigator>
+    )
+}
+
+function ChatStackComponent() {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Chat" component={Chat} />
+            <Stack.Screen name="ChatDetail" component={ChatDetail} />
         </Stack.Navigator>
     )
 }
@@ -43,7 +53,7 @@ function MyTabRoutes() {
             />
             <Tab.Screen
                 name="Chat"
-                component={Chat}
+                component={ChatStackComponent}
                 options={{
                     tabBarIcon: () => <Ionicons name="chatbox-ellipses" size={24} color="black" />
                 }}
