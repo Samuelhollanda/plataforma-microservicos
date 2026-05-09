@@ -9,6 +9,7 @@ export const styles = StyleSheet.create ({
     titulo: {
         fontSize: 20, 
         fontWeight: 'bold', 
+        marginBottom: 10,
     },
     buttonback:{
         padding: 10,
@@ -29,5 +30,20 @@ export const styles = StyleSheet.create ({
     }, 
     text: {
         fontSize: 16, 
+    },
+    emptyContainer: {
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center',
+    },
+    imageUrso: {
+        width: 150,
+        height: 150,
+        marginBottom: 15,
+    },
+    emptyText: {
+        fontSize: 18, 
+        color: '#333',
+        fontWeight: 'bold',
     }
-});
+    });

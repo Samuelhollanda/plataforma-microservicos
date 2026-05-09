@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
@@ -10,6 +10,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
+import ChatDetail from '../ChatDetail/ChatDetail';
 
 import estilos from './Style.Chat';
 
@@ -21,7 +22,7 @@ const numeros = [
 
 export default function Chat() {
 
-    const navigation = useNavigation();
+    const navigation = useNavigation<any>();
 
 
     const Contato = ({ item }: any) => {
@@ -33,7 +34,7 @@ export default function Chat() {
         return (
             <TouchableOpacity 
             style={estilos.itemLista}   
-            onPress={() => navigation.navigate('ChatDetail' as never)}>
+            onPress={() => navigation.navigate('ChatDetail')}>
                 <Image source={imagemCerta} style={estilos.fotoContato} />
                 <Text style={estilos.nomeContato}>{item.nome}</Text>
             </TouchableOpacity>

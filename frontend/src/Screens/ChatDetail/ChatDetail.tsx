@@ -10,7 +10,7 @@ import {
     TouchableOpacity,
     View
 } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 import estilos from './Style.ChatDetail';
 
 const mensagens = [
@@ -22,6 +22,9 @@ const mensagens = [
 ];
 
 export default function ChatDetail() {
+
+  const navigation = useNavigation<any>()
+
   return (
     <KeyboardAvoidingView
       style={estilos.tela}
@@ -33,7 +36,7 @@ export default function ChatDetail() {
 
   <TouchableOpacity
     style={estilos.botaoVoltar}
-    onPress={() => navigation.goBack()}
+    onPress={() => navigation.back()}
   >
     <Text style={estilos.textoVoltar}>←</Text>
   </TouchableOpacity>
