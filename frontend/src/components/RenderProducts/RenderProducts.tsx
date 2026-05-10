@@ -6,11 +6,10 @@ import style from "./Style.RenderProducts";
 const RenderProducts = ({ item }: { item: any }) => {
   const navigation = useNavigation<any>();
 
-  if (!item) return null;
+  
 
   return (
     <View style={style.container}>
-      {/* Se não tiver foto, ele não quebra */}
       <Image source={item.photo || { uri: 'https://via.placeholder.com/150' }} style={style.image} />
 
       <View style={style.infoContainer}>
@@ -18,7 +17,6 @@ const RenderProducts = ({ item }: { item: any }) => {
 
         <View>
           <Text style={style.detail}>Descrição:</Text>
-          {/* Aqui estava o erro! Usamos uma interrogação para segurança */}
           <Text style={style.detail}>{item?.description || 'Sem descrição'}</Text>
         </View>
 
