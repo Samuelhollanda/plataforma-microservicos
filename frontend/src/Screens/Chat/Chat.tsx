@@ -1,17 +1,7 @@
-
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {
-    FlatList,
-    Image,
-    StatusBar,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
-} from 'react-native';
-import ChatDetail from '../ChatDetail/ChatDetail';
+import { StatusBar, Text, TextInput, View } from 'react-native';
 
+import ListaContatos from '../../components/ListaContatos/ListaContatos';
 import estilos from './Style.Chat';
 
 const numeros = [
@@ -21,29 +11,8 @@ const numeros = [
 ];
 
 export default function Chat() {
-
-    const navigation = useNavigation<any>();
-
-
-    const Contato = ({ item }: any) => {
-        const imagemCerta =
-            typeof item.foto === 'string'
-                ? { uri: item.foto }
-                : item.foto;
-
-        return (
-            <TouchableOpacity 
-            style={estilos.itemLista}   
-            onPress={() => navigation.navigate('ChatDetail')}>
-                <Image source={imagemCerta} style={estilos.fotoContato} />
-                <Text style={estilos.nomeContato}>{item.nome}</Text>
-            </TouchableOpacity>
-        );
-    };
-
     return (
         <View style={estilos.tela}>
-
             <StatusBar backgroundColor="white" barStyle="dark-content" />
 
             <View style={estilos.barraSuperior}>
@@ -55,18 +24,15 @@ export default function Chat() {
                 <View style={estilos.buscaContainer}>
                     <Text style={estilos.iconeBusca}>🔍</Text>
                     <TextInput
-                        placeholder="Digite um nome"
+                        placeholder="Procurando por..."
                         style={estilos.inputBusca}
                     />
                 </View>
             </View>
 
             <View style={estilos.conteudo}>
-                <FlatList
-                    data={numeros}
-                    renderItem={Contato}
-                    keyExtractor={(item) => item.id}
-                />
+                {                        }
+                <ListaContatos dados={numeros} />
             </View>
 
         </View>
