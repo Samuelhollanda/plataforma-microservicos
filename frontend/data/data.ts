@@ -4,6 +4,7 @@ interface Product {
     id_product: number,
     title: string,
     photo: ImageSourcePropType,
+    call?: string,
     description: string
 }
 
@@ -12,6 +13,7 @@ export const listProduct: Product[] = [
         id_product: 1,
         title: "Jardineiro",
         photo: { uri: "https://images.pexels.com/photos/33688146/pexels-photo-33688146.jpeg"},
+        call: "João Carlos, 23 anos, Jardineiro",
         description: "O jardineiro é responsável pela criação, implantação e manutenção de áreas verdes, cuidando da estética e saúde de plantas, árvores e gramados. Seus serviços incluem podar, adubar, regar, cortar grama, controlar pragas e limpar terrenos, garantindo um ambiente harmonioso.",
     
 

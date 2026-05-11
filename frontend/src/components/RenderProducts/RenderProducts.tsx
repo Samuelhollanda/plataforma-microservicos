@@ -17,11 +17,11 @@ const RenderProducts = ({ item }: { item: any }) => {
 
         <View>
           <Text style={style.detail}>Descrição:</Text>
-          <Text style={style.detail}>{item?.description || 'Sem descrição'}</Text>
+          <Text style={style.detail}>{item?.call || 'Sem descrição'}</Text>
         </View>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate('Detail')}
+          onPress={() => navigation.navigate('Detail', { id_product: item.id_product})}
           style={style.buyButton}
         >
           <Text style={style.buyButtonText}>Contratar Agora</Text>
