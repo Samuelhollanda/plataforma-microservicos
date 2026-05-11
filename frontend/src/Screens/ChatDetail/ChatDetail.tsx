@@ -36,7 +36,7 @@ export default function ChatDetail() {
 
   <TouchableOpacity
     style={estilos.botaoVoltar}
-    onPress={() => navigation.back()}
+    onPress={() => navigation.goBack()}
   >
     <Text style={estilos.textoVoltar}>←</Text>
   </TouchableOpacity>

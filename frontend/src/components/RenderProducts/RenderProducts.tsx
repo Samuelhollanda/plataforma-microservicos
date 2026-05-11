@@ -26,7 +26,7 @@ const RenderProducts = ({ item }: { item: any }) => {
           onPress={() => navigation.navigate('Detail')}
           style={style.buyButton}
         >
-          <Text style={style.buyButtonText}>Comprar agora</Text>
+          <Text style={style.buyButtonText}>Contratar Agora</Text>
         </TouchableOpacity>
       </View>
     </View>
