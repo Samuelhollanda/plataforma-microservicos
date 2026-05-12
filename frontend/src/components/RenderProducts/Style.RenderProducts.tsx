@@ -8,10 +8,8 @@ const style = StyleSheet.create({
         borderRadius: 15,
         marginHorizontal: 15,
         marginBottom: 15,
-        flexDirection: 'row', // Alinha imagem na esquerda e texto na direita
+        flexDirection: 'row',
         padding: 12,
-        //flexDirection: 'row'
-        // Sombras para dar profundidade
         elevation: 4,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -30,7 +28,6 @@ const style = StyleSheet.create({
         backgroundColor: '#ffffffff',
     },
     card: {
-        //backgroundColor: 'green',
         margin: 4,
         flex: 1
     },
@@ -44,7 +41,7 @@ const style = StyleSheet.create({
         paddingHorizontal: 12,
         paddingVertical: 6,
         borderRadius: 6,
-        alignSelf: 'flex-end', // Joga o botão para a direita
+        alignSelf: 'flex-end', 
     },
     buyButtonText: {
         color: '#fff',
