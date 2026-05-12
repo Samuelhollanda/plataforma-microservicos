@@ -5,7 +5,7 @@ import ListaContatos from '../../components/ListaContatos/ListaContatos';
 import estilos from './Style.Chat';
 
 const numeros = [
-    { id: '1', nome: 'Samuel Oliveira', foto: require('../../../assets/images/Sb.jpg') },
+    { id: '1', nome: 'Samuel Oliveira', foto: { uri: 'https://placehold.co/600x600'} },
     { id: '2', nome: 'Josias Lima', foto: require('../../../assets/images/jg.jpg') },
     { id: '3', nome: 'Bruno Emanuel', foto: require('../../../assets/images/br.jpg') },
 ];
@@ -31,7 +31,6 @@ export default function Chat() {
             </View>
 
             <View style={estilos.conteudo}>
-                {                        }
                 <ListaContatos dados={numeros} />
             </View>
 

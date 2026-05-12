@@ -15,7 +15,7 @@ export default function ListaContatos({ dados }: { dados: any }) {
         return (
             <TouchableOpacity 
                 style={estilos.itemLista}   
-                onPress={() => navigation.navigate('ChatDetail')}
+                onPress={() => navigation.navigate('ChatDetail', {})}
             >
                 <Image source={imagemCerta} style={estilos.fotoContato} />
                 <Text style={estilos.nomeContato}>{item.nome}</Text>
