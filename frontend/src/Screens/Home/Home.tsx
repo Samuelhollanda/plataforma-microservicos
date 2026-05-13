@@ -14,12 +14,12 @@ const Home = () => {
         <View>
             <Header />
             <View>
-                <Text style={style.title}>     
-                    Bem Vindo a Plataforma de Serviços
-                </Text>
+                <SearchBar />
             </View>
             <ScrollView>
-                <SearchBar />
+                <Text style={style.title}>
+                    Bem Vindo a Plataforma de Serviços
+                </Text>
                 <ProductList />
             </ScrollView>
         </View>
