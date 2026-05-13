@@ -1,6 +1,6 @@
 import React from 'react';
 import { StatusBar, Text, TextInput, View } from 'react-native';
-
+import Header from '@/src/components/Header/Header';
 import ListaContatos from '../../components/ListaContatos/ListaContatos';
 import estilos from './Style.Chat';
 
@@ -16,11 +16,7 @@ export default function Chat() {
             <StatusBar backgroundColor="white" barStyle="dark-content" />
 
             <View style={estilos.barraSuperior}>
-                <View style={estilos.topoLinha}>
-                    <Text style={estilos.logo}>PMM</Text>
-                    <Text style={estilos.localizacao}>Teresina, Piauí</Text>
-                </View>
-
+                <Header />
                 <View style={estilos.buscaContainer}>
                     <Text style={estilos.iconeBusca}>🔍</Text>
                     <TextInput

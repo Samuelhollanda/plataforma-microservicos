@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
+import { View, Text, FlatList, Image } from "react-native";
 import { styles } from "./Style.Favourite";
-import Header from "@/src/components/Header/header";
+import Header from "@/src/components/Header/Header";
 
 
 const Favourite = () => {

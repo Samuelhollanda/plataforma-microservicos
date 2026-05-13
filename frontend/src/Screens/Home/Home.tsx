@@ -3,6 +3,7 @@ import SearchBar from "@/src/components/SearchBar/SearchBar";
 import { useNavigation } from "expo-router";
 import { View, Text, Button, TextInput, StyleSheet  } from "react-native";
 import style from "./Style.Home";
+import Header from "@/src/components/Header/Header";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
 
     return (
         <View>
+            <Header />
             <View>
                 <Text style={style.title}>     
                     Bem Vindo a Plataforma de Serviços
