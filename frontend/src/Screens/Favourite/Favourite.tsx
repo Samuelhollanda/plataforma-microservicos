@@ -5,7 +5,6 @@ import Header from "@/src/components/Header/Header";
 
 
 const Favourite = () => {
-    const navigation = useNavigation<any>()
 
     type Item = {
         id: string;
@@ -18,7 +17,6 @@ const Favourite = () => {
         <>
             <Header />
             <View style={styles.container}>
-                <Text style={styles.titulo}>Favourite</Text>
                 <FlatList
                     data={data}
                     keyExtractor={(item) => item.id}
@@ -28,15 +26,15 @@ const Favourite = () => {
                         </View>
                     )}
                     ListEmptyComponent={() => (
-                        <>
+                        <View style={styles.listEmpty}>
                             <Text style={styles.emptyText}>
                                 There is nothing!
                             </Text>
                             <Image
                                 source={require("../../../assets/images/Urso.png")}
-                                style={{ width: 30, height: 30 }}
+                                style={styles.imageUrso}
                             />
-                        </>
+                        </View>
                     )}
                 />
             </View>

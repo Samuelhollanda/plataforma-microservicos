@@ -1,7 +1,7 @@
 import ProductList from "@/src/components/ProductList/ProductList";
 import SearchBar from "@/src/components/SearchBar/SearchBar";
 import { useNavigation } from "expo-router";
-import { View, Text, Button, TextInput, StyleSheet  } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import style from "./Style.Home";
 import Header from "@/src/components/Header/Header";
 
@@ -18,12 +18,10 @@ const Home = () => {
                     Bem Vindo a Plataforma de Serviços
                 </Text>
             </View>
-            <View>
+            <ScrollView>
                 <SearchBar />
-            </View>
-            <View>
                 <ProductList />
-            </View>
+            </ScrollView>
         </View>
     )
 }

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  TextInput, 
-  TouchableOpacity, 
-  StyleSheet, 
-  KeyboardAvoidingView, 
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  KeyboardAvoidingView,
   Platform,
   Alert,
   ActivityIndicator
 } from 'react-native';
 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebaseConfig'; 
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { auth } from '../../firebaseConfig';
 import stylesRegister from './Style.Register';
 
 type RootStackParamList = {
@@ -30,19 +30,23 @@ interface Props {
 }
 
 export default function Register({ navigation }: Props) {
+  const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSignUp = async () => {
-    if (email === '' || password === '') {
+    if (userName === '' || email === '' || password === '') {
       Alert.alert('Erro', 'Preencha todos os campos para criar uma conta.');
       return;
     }
 
     setIsLoading(true);
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, {
+        displayName: userName
+      })
       Alert.alert('Sucesso', 'Conta criada com sucesso!');
       navigation.replace('MainTabs');
     } catch (error) {
@@ -61,12 +65,20 @@ export default function Register({ navigation }: Props) {
   };
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={stylesRegister.container}
     >
       <View style={stylesRegister.formContainer}>
         <Text style={stylesRegister.title}>Criar Conta</Text>
+
+        <TextInput 
+          style={stylesRegister.input}
+          placeholder='Nome Completo'
+          placeholderTextColor='#aaa'
+          value={userName}
+          onChangeText={setUserName}
+        />
 
         <TextInput
           style={stylesRegister.input}
@@ -95,8 +107,8 @@ export default function Register({ navigation }: Props) {
               <Text style={stylesRegister.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
-              style={[stylesRegister.button, stylesRegister.buttonOutline]} 
+            <TouchableOpacity
+              style={[stylesRegister.button, stylesRegister.buttonOutline]}
               onPress={() => navigation.goBack()}
             >
               <Text style={stylesRegister.buttonOutlineText}>Já tenho uma conta</Text>
