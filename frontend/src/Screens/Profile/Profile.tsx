@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, Pressable } from "react-native";
 import { styles } from "./Style.Profile";
 import { auth } from "@/src/firebaseConfig";
+import Header from "@/src/components/Header/Header";
 
 const Profile = () => {
 
@@ -11,6 +12,7 @@ const Profile = () => {
 
     return (
         <View style={styles.container}>
+            <Header />
 
             <View style={styles.profileContainer}>
                 <Image

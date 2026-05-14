@@ -1,14 +1,24 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 
-const style = StyleSheet.create({
-    search: {
+const styles = StyleSheet.create({
+    buscaContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#f1f1f1',
+        borderRadius: 10,
+        paddingHorizontal: 10,
+        height: 40,
         borderWidth: 1,
-        margin: 10,
-        borderRadius: 1000,
-        paddingHorizontal: 15,
-        paddingVertical: 5,
-        backgroundColor: '#fcfcfcff',
-    }
-})
+        marginHorizontal: 10
+    },
 
-export default style;
+    iconeBusca: {
+        marginRight: 5,
+    },
+
+    inputBusca: {
+        flex: 1,
+    }
+});
+
+export default styles;
