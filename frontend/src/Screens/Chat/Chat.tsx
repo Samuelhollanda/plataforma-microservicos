@@ -1,7 +1,15 @@
 import React from 'react';
-import { StatusBar, Text, TextInput, View } from 'react-native';
-import Header from '@/src/components/Header/Header';
+import { 
+  StatusBar, 
+  Text, 
+  TextInput, 
+  View, 
+  FlatList, 
+  TouchableOpacity, 
+  Image 
+} from 'react-native';
 import ListaContatos from '../../components/ListaContatos/ListaContatos';
+import { useNavigation } from '@react-navigation/native';
 import estilos from './Style.Chat';
 import SearchBar from '@/src/components/SearchBar/SearchBar';
 const numeros = [
@@ -11,6 +19,8 @@ const numeros = [
 ];
 
 export default function Chat() {
+    const navigation = useNavigation<any>();
+
     return (
         <View style={estilos.tela}>
                             <Header />
@@ -21,7 +31,25 @@ export default function Chat() {
             </View>
 
             <View style={estilos.conteudo}>
-                <ListaContatos dados={numeros} />
+                <FlatList
+                    data={numeros}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            style={estilos.itemLista}
+                            onPress={() => {
+                                navigation.navigate('ChatDetail', {
+                                    id: item.id,
+                                    nome: item.nome,
+                                    foto: item.foto
+                                });
+                            }}
+                        >
+                            <Image source={item.foto} style={estilos.fotoContato} />
+                            <Text style={estilos.nomeContato}>{item.nome}</Text>
+                        </TouchableOpacity>
+                    )}
+                />
             </View>
 
         </View>
