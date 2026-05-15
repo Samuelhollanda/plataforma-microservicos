@@ -16,7 +16,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth'; // Removemos o creat
 import { auth } from '../../firebaseConfig'; 
 import stylesLogin from './Style.Login';
 
-// Adicionamos a rota Register aqui também
 type RootStackParamList = {
   Login: undefined;
   Home: undefined;
@@ -95,7 +94,6 @@ export default function Login({ navigation }: Props) {
               <Text style={stylesLogin.buttonText}>Entrar</Text>
             </TouchableOpacity>
 
-            {/* Mudamos a ação deste botão para NAVEGAR em vez de CADASTRAR */}
             <TouchableOpacity 
               style={[stylesLogin.button, stylesLogin.buttonOutline]} 
               onPress={() => navigation.navigate('Register')}

@@ -3,7 +3,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 const estilos = StyleSheet.create({
   tela: {
     flex: 1,
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
   },
 
   barraSuperior: {
@@ -30,23 +30,6 @@ const estilos = StyleSheet.create({
   localizacao: {
     fontSize: 14,
     color: '#555',
-  },
-
-  buscaContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#f1f1f1',
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    height: 40,
-  },
-
-  iconeBusca: {
-    marginRight: 5,
-  },
-
-  inputBusca: {
-    flex: 1,
   },
 
   iconesContainer: {

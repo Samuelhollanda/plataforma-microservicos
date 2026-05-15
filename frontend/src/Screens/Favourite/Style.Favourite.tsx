@@ -31,11 +31,6 @@ export const styles = StyleSheet.create ({
     text: {
         fontSize: 16, 
     },
-    emptyContainer: {
-        flex: 1, 
-        justifyContent: 'center', 
-        alignItems: 'center',
-    },
     imageUrso: {
         width: 150,
         height: 150,
@@ -45,5 +40,11 @@ export const styles = StyleSheet.create ({
         fontSize: 18, 
         color: '#333',
         fontWeight: 'bold',
+    },
+    listEmpty: {
+        marginTop: 200,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     }
     });

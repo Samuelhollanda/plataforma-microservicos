@@ -1,15 +1,16 @@
-import { View, TextInput } from "react-native"
-import style from "./Style.SearchBar";
+import { View, TextInput, Text } from "react-native"
+import styles from "./Style.SearchBar";
 
 
 
 
 const SearchBar = () => {
     return (
-        <View>
-            <TextInput 
-                placeholder="O que procura hoje?"
-                style={style.search}
+        <View style={styles.buscaContainer}>
+            <Text style={styles.iconeBusca}>🔍</Text>
+            <TextInput
+                placeholder="Procurando por..."
+                style={styles.inputBusca}
             />
         </View>
     )

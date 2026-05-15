@@ -11,9 +11,9 @@ import {
 import ListaContatos from '../../components/ListaContatos/ListaContatos';
 import { useNavigation } from '@react-navigation/native';
 import estilos from './Style.Chat';
-
+import SearchBar from '@/src/components/SearchBar/SearchBar';
 const numeros = [
-    { id: '1', nome: 'Samuel Oliveira', foto: require('../../../assets/images/Sb.jpg') },
+    { id: '1', nome: 'Samuel Oliveira', foto: { uri: 'https://placehold.co/600x600'} },
     { id: '2', nome: 'Josias Lima', foto: require('../../../assets/images/jg.jpg') },
     { id: '3', nome: 'Bruno Emanuel', foto: require('../../../assets/images/br.jpg') },
 ];
@@ -23,21 +23,11 @@ export default function Chat() {
 
     return (
         <View style={estilos.tela}>
+                            <Header />
             <StatusBar backgroundColor="white" barStyle="dark-content" />
 
             <View style={estilos.barraSuperior}>
-                <View style={estilos.topoLinha}>
-                    <Text style={estilos.logo}>PMM</Text>
-                    <Text style={estilos.localizacao}>Teresina, Piauí</Text>
-                </View>
-
-                <View style={estilos.buscaContainer}>
-                    <Text style={estilos.iconeBusca}>🔍</Text>
-                    <TextInput
-                        placeholder="Procurando por..."
-                        style={estilos.inputBusca}
-                    />
-                </View>
+                <SearchBar />
             </View>
 
             <View style={estilos.conteudo}>

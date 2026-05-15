@@ -1,13 +1,18 @@
 import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, Pressable } from "react-native";
 import { styles } from "./Style.Profile";
+import { auth } from "@/src/firebaseConfig";
+import Header from "@/src/components/Header/Header";
 
 const Profile = () => {
+
+    const user = auth.currentUser
 
     const navigation = useNavigation<any>()
 
     return (
         <View style={styles.container}>
+            <Header />
 
             <View style={styles.profileContainer}>
                 <Image
@@ -15,7 +20,7 @@ const Profile = () => {
                     style={styles.image}
                 />
 
-                <Text style={styles.name}>Maira</Text>
+                <Text style={styles.name}>Olá, {user?.displayName || 'Visitante'}</Text>
 
                 <Pressable style={styles.button}>
                     <Text style={styles.buttonText}>

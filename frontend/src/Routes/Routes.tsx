@@ -20,7 +20,7 @@ const Tab = createBottomTabNavigator();
 function HomeStackComponent() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="HomeScreen" component={Home} />
             <Stack.Screen name="Detail" component={Detail} />
         </Stack.Navigator>
     )
@@ -45,7 +45,7 @@ function MyTabRoutes() {
             })}
         >
             <Tab.Screen
-                name="HomeTab"
+                name="Home"
                 component={HomeStackComponent}
                 options={{
                     tabBarIcon: () => <Feather name="search" size={24} color="black" />
