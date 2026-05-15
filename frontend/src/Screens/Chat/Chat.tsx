@@ -1,19 +1,19 @@
-import React from 'react';
-import { 
-  StatusBar, 
-  Text, 
-  TextInput, 
-  View, 
-  FlatList, 
-  TouchableOpacity, 
-  Image 
-} from 'react-native';
-import ListaContatos from '../../components/ListaContatos/ListaContatos';
 import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import {
+    FlatList,
+    Image,
+    StatusBar,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from 'react-native';
+import Header from '../../components/Header/Header';
 import estilos from './Style.Chat';
-import SearchBar from '@/src/components/SearchBar/SearchBar';
+
 const numeros = [
-    { id: '1', nome: 'Samuel Oliveira', foto: { uri: 'https://placehold.co/600x600'} },
+    { id: '1', nome: 'Samuel Oliveira', foto: require('../../../assets/images/Sb.jpg') },
     { id: '2', nome: 'Josias Lima', foto: require('../../../assets/images/jg.jpg') },
     { id: '3', nome: 'Bruno Emanuel', foto: require('../../../assets/images/br.jpg') },
 ];
@@ -23,11 +23,17 @@ export default function Chat() {
 
     return (
         <View style={estilos.tela}>
-                            <Header />
             <StatusBar backgroundColor="white" barStyle="dark-content" />
 
             <View style={estilos.barraSuperior}>
-                <SearchBar />
+                <Header />
+                <View style={estilos.buscaContainer}>
+                    <Text style={estilos.iconeBusca}>🔍</Text>
+                    <TextInput
+                        placeholder="Procurando por..."
+                        style={estilos.inputBusca}
+                    />
+                </View>
             </View>
 
             <View style={estilos.conteudo}>
